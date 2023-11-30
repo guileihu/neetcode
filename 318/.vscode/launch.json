@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cpp build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/build_x86/tools/main_bev",
+            // "args": [
+            //     // ">",
+            //     // "output2.txt",
+            // ],
+            "stopAtEntry": false,
+            "environment": [
+                {
+                    "name": "GLOG_v",
+                    "value": 4
+                },
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "${workspaceFolder}/build_x86/output/third_party:${workspaceFolder}/build_x86/output/third_party/lib:${workspaceFolder}/build_x86/output/third_party/lib/lib:${workspaceFolder}/build_x86/output/lib"
+                }            
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build bev",
+            "miDebuggerPath": "/usr/bin/gdb"
+            //"miDebuggerPath":"/usr/bin/gdb"
+        }
+    ]
+}
